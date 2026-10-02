@@ -121,9 +121,10 @@
   @media (prefers-color-scheme: dark) { html:not([data-theme="light"]) .hero h1 { color: #fff; } }
   .hero-sub { margin-top: 22px; font-size: 18px; color: var(--slate); max-width: 46ch; }
   .hero-tagline {
-    margin-top: 28px; display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 28px; display: inline-block;
     font-family: var(--font-mono); font-size: 13px; color: var(--navy-800);
     background: var(--navy-tint); padding: 8px 14px; border-radius: 8px;
+    line-height: 1.6;
   }
   html[data-theme="dark"] .hero-tagline { color: #cdd8f5; }
   @media (prefers-color-scheme: dark) { html:not([data-theme="light"]) .hero-tagline { color: #cdd8f5; } }
