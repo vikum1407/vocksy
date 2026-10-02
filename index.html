@@ -219,13 +219,8 @@
   .trust-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
   .trust-item p { font-size: 14px; color: #c3cde5; line-height: 1.55; }
 
-  .diagram-stack { display: flex; flex-direction: column; gap: 52px; margin-top: 8px; }
-  .diagram-fig { margin: 0; }
+  .diagram-fig { margin: 24px 0 0; }
   .diagram-fig svg { width: 100%; height: auto; display: block; color: var(--ink); }
-  .diagram-fig figcaption { margin-top: 16px; font-size: 14px; color: var(--slate); line-height: 1.6; max-width: 760px; }
-  .dg-title { font-family: var(--font-body); font-weight: 700; }
-  .dg-label { font-family: var(--font-body); font-weight: 600; fill: var(--slate); }
-  .dg-bullet { font-family: var(--font-body); font-weight: 500; fill: var(--ink); }
 
   footer { padding: 40px 0 56px; }
   .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -333,92 +328,38 @@
     <div class="wrap">
       <div class="section-head">
         <span class="section-kicker">HOW IT WORKS</span>
-        <h2>One history, two people who both need it.</h2>
-        <p class="section-desc">What actually happens between a vehicle owner and a garage — and where that history ends up.</p>
+        <h2>One vehicle. Everyone who cares about it, connected.</h2>
+        <p class="section-desc">A vehicle owner and a garage — one shared history, kept honest in between.</p>
       </div>
 
-      <div class="diagram-stack">
+      <figure class="diagram-fig">
+        <svg viewBox="0 0 900 320" role="img" aria-label="An illustration of a vehicle owner and a garage connected by the road their shared vehicle travels between them.">
+          <rect x="0" y="0" width="900" height="320" rx="28" fill="var(--navy-tint)"></rect>
 
-        <figure class="diagram-fig">
-          <svg viewBox="0 0 1000 225" role="img" aria-label="A service record starts with the owner, passes through a garage the owner chooses to share it with, and becomes part of a verified history that transfers to the buyer at resale.">
-            <defs>
-              <marker id="dg1arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="currentColor" opacity="0.55"></path>
-              </marker>
-              <marker id="dg1arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="var(--amber)"></path>
-              </marker>
-            </defs>
+          <!-- road connecting owner to garage -->
+          <line x1="70" y1="252" x2="830" y2="252" stroke="var(--line-strong)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 20"></line>
+          <circle cx="258" cy="252" r="6" fill="var(--amber)"></circle>
+          <circle cx="642" cy="252" r="6" fill="var(--amber)"></circle>
 
-            <!-- flow boxes -->
-            <rect x="20" y="70" width="160" height="64" rx="10" fill="var(--surface)" stroke="var(--line)"></rect>
-            <text x="100" y="107" text-anchor="middle" class="dg-title" font-size="13">Your Records</text>
+          <!-- owner (left) -->
+          <circle cx="150" cy="148" r="30" fill="var(--navy-800)"></circle>
+          <path d="M104,252 Q104,180 150,180 Q196,180 196,252 Z" fill="var(--navy-800)"></path>
 
-            <rect x="220" y="70" width="160" height="64" rx="10" fill="var(--surface)" stroke="var(--line)"></rect>
-            <text x="300" y="107" text-anchor="middle" class="dg-title" font-size="13">Garage</text>
+          <!-- car (center, on the road) -->
+          <ellipse cx="450" cy="253" rx="95" ry="9" fill="var(--navy-950)" opacity="0.08"></ellipse>
+          <path d="M398,198 L418,160 L482,160 L502,198 Z" fill="var(--amber)"></path>
+          <rect x="365" y="196" width="170" height="48" rx="16" fill="var(--amber)"></rect>
+          <circle cx="403" cy="246" r="19" fill="var(--ink)"></circle>
+          <circle cx="403" cy="246" r="7" fill="var(--navy-tint)"></circle>
+          <circle cx="497" cy="246" r="19" fill="var(--ink)"></circle>
+          <circle cx="497" cy="246" r="7" fill="var(--navy-tint)"></circle>
 
-            <rect x="420" y="70" width="160" height="64" rx="10" fill="var(--surface)" stroke="var(--line)"></rect>
-            <text x="500" y="107" text-anchor="middle" class="dg-title" font-size="12.5">Completed Service</text>
-
-            <rect x="620" y="70" width="160" height="64" rx="10" fill="var(--surface)" stroke="var(--line)"></rect>
-            <text x="700" y="107" text-anchor="middle" class="dg-title" font-size="13">You Accept</text>
-
-            <rect x="820" y="70" width="160" height="64" rx="10" fill="var(--surface)" stroke="var(--amber)" stroke-width="2"></rect>
-            <text x="900" y="107" text-anchor="middle" class="dg-title" font-size="13">Verified History</text>
-
-            <!-- connecting arrows -->
-            <line x1="180" y1="102" x2="216" y2="102" stroke="currentColor" stroke-width="1.6" opacity="0.55" marker-end="url(#dg1arrow)"></line>
-            <text x="198" y="90" text-anchor="middle" class="dg-label" font-size="11">share records</text>
-
-            <line x1="380" y1="102" x2="416" y2="102" stroke="currentColor" stroke-width="1.6" opacity="0.55" marker-end="url(#dg1arrow)"></line>
-            <text x="398" y="90" text-anchor="middle" class="dg-label" font-size="11">does the job</text>
-
-            <line x1="580" y1="102" x2="616" y2="102" stroke="currentColor" stroke-width="1.6" opacity="0.55" marker-end="url(#dg1arrow)"></line>
-            <text x="598" y="90" text-anchor="middle" class="dg-label" font-size="11">submits for review</text>
-
-            <line x1="780" y1="102" x2="816" y2="102" stroke="currentColor" stroke-width="1.6" opacity="0.55" marker-end="url(#dg1arrow)"></line>
-            <text x="798" y="90" text-anchor="middle" class="dg-label" font-size="11">you accept</text>
-
-            <!-- branch to resale -->
-            <line x1="900" y1="134" x2="900" y2="170" stroke="var(--amber)" stroke-width="1.6" stroke-dasharray="3 4" marker-end="url(#dg1arrowAmber)"></line>
-            <rect x="770" y="178" width="260" height="36" rx="18" fill="none" stroke="var(--amber)" stroke-width="1.4"></rect>
-            <text x="900" y="201" text-anchor="middle" class="dg-label" font-size="11.5" fill="var(--amber-deep)">transfers to the buyer at resale</text>
-          </svg>
-          <figcaption>A service record starts with you, passes through a garage you choose to share it with, and becomes part of a verified history — which transfers with the vehicle when you sell it.</figcaption>
-        </figure>
-
-        <figure class="diagram-fig">
-          <svg viewBox="0 0 1000 300" role="img" aria-label="Owners and garages are connected directly: a booking or shared records from the owner reach the garage, and a confirmation or completed service flows back from the garage to the owner.">
-            <defs>
-              <marker id="dg2arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="currentColor" opacity="0.6"></path>
-              </marker>
-            </defs>
-
-            <rect x="30" y="30" width="380" height="240" rx="14" fill="var(--surface)" stroke="var(--navy-800)" stroke-width="2"></rect>
-            <text x="220" y="62" text-anchor="middle" class="dg-title" font-size="16">Vehicle Owner</text>
-            <text x="55" y="100" class="dg-bullet" font-size="13">•  Logs service, fuel &amp; expenses</text>
-            <text x="55" y="130" class="dg-bullet" font-size="13">•  Gets predictions &amp; reminders</text>
-            <text x="55" y="160" class="dg-bullet" font-size="13">•  Books garage appointments</text>
-            <text x="55" y="190" class="dg-bullet" font-size="13">•  Builds a sellable history</text>
-
-            <rect x="590" y="30" width="380" height="240" rx="14" fill="var(--surface)" stroke="var(--amber)" stroke-width="2"></rect>
-            <text x="780" y="62" text-anchor="middle" class="dg-title" font-size="16">Garage / Service Center</text>
-            <text x="615" y="100" class="dg-bullet" font-size="13">•  Manages schedule &amp; bookings</text>
-            <text x="615" y="130" class="dg-bullet" font-size="13">•  Completes submitted services</text>
-            <text x="615" y="160" class="dg-bullet" font-size="13">•  Builds a customer ledger</text>
-            <text x="615" y="190" class="dg-bullet" font-size="13">•  Grows repeat business</text>
-
-            <line x1="410" y1="130" x2="586" y2="130" stroke="currentColor" stroke-width="1.8" opacity="0.6" marker-end="url(#dg2arrow)"></line>
-            <text x="500" y="118" text-anchor="middle" class="dg-label" font-size="11.5">booking + shared records</text>
-
-            <line x1="590" y1="172" x2="414" y2="172" stroke="currentColor" stroke-width="1.8" opacity="0.6" marker-end="url(#dg2arrow)"></line>
-            <text x="500" y="194" text-anchor="middle" class="dg-label" font-size="11.5">confirmation + completed service</text>
-          </svg>
-          <figcaption>Owners and garages aren't on separate platforms — a booking or a shared record from one side shows up directly on the other, and a completed service flows back the same way.</figcaption>
-        </figure>
-
-      </div>
+          <!-- garage (right) -->
+          <polygon points="692,188 750,148 808,188" fill="var(--amber)"></polygon>
+          <rect x="700" y="188" width="100" height="64" rx="6" fill="var(--navy-800)"></rect>
+          <rect x="735" y="214" width="30" height="38" rx="4" fill="var(--navy-tint)"></rect>
+        </svg>
+      </figure>
     </div>
   </section>
 
